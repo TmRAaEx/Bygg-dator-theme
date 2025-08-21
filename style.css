@@ -29,8 +29,14 @@ body {
   align-items: center;
 }
 
-.not-found{
+.shop-wrapper{
+    display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.not-found {
+  flex-direction: column;
 }
 
 .site-content {
@@ -49,4 +55,13 @@ body {
   background-color: lightgray;
 
   /* background: url('hero.jpg') center/cover no-repeat; */
+}
+
+.content {
+  padding: 4rem 0;
+  width: 50vw;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

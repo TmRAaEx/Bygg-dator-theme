@@ -43,3 +43,19 @@ add_action('wp_enqueue_scripts', 'bdt_load_assets');
 register_nav_menus([
     'top-menu' => __('Top Menu', 'bygg-dator-theme')
 ]);
+//woocommerce support
+function bdt_add_woocommerce_support()
+{
+    add_theme_support('woocommerce');
+}
+add_action('after_setup_theme', 'bdt_add_woocommerce_support');
+
+
+
+//image sizes
+function bdt_setup_images()
+{
+    add_image_size('post_image', 1100, 550, false);
+}
+
+add_action('after_setup_theme', 'bdt_setup_images');
