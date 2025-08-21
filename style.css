@@ -5,3 +5,48 @@ Version: 1.0.0
 Description: Theme for Bygg Dator
 */
 
+:root {
+  --header-gap: clamp(1rem, 5vw, 10vw);
+  --header-menu-gap: clamp(0.5rem, 2vw, 2rem);
+  --header-menu-fontsize: clamp(0.9rem, 2vw, 1.1rem);
+  --header-height: 8vh;
+  --header-min-height: 70px;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found{
+    flex-direction: column;
+}
+
+.site-content {
+  padding: 0.5rem 1rem;
+}
+
+#hero {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: -0.5rem;
+  height: 500px;
+  background-color: lightgray;
+
+  /* background: url('hero.jpg') center/cover no-repeat; */
+}

@@ -3,33 +3,43 @@
  * Loads the stylesheets used in this theme
  * @return void
  */
-function bdt_load_stylesheets()
+function bdt_load_assets()
 {
-    // main stylesheet
-    wp_register_style(
-        'stylesheet',
+    // CSS
+    wp_enqueue_style(
+        'main-style',
         get_template_directory_uri() . '/style.css',
         [],
-        filemtime(get_template_directory() . '/style.css'), // version based on file change
-        'all'
+        filemtime(get_template_directory() . '/style.css')
     );
-    wp_enqueue_style('stylesheet');
-}
-add_action('wp_enqueue_scripts', 'bdt_load_stylesheets');
+    wp_enqueue_style(
+        'header-style',
+        get_template_directory_uri() . '/assets/css/header.css',
+        [],
+        filemtime(get_template_directory() . '/assets/css/header.css')
+    );
 
-/**
- * Loads JavaScript for this theme
- * @return void
- */
-function bdt_load_javascript()
-{
-    wp_register_script(
-        'custom',
+    wp_enqueue_style(
+        'footer-style',
+        get_template_directory_uri() . '/assets/css/footer.css',
+        [],
+        filemtime(get_template_directory() . '/assets/css/footer.css')
+    );
+
+    // JS
+    wp_enqueue_script(
+        'custom-js',
         get_template_directory_uri() . '/assets/js/app.js',
-        ['jquery'],
-        filemtime(get_template_directory() . '/assets/js/app.js'), // version based on file change
+        ['jquery'], //TODO might change
+        filemtime(get_template_directory() . '/assets/js/app.js'),
         true
     );
-    wp_enqueue_script('custom');
 }
-add_action('wp_enqueue_scripts', 'bdt_load_javascript');
+add_action('wp_enqueue_scripts', 'bdt_load_assets');
+
+
+
+// Register nav menu
+register_nav_menus([
+    'top-menu' => __('Top Menu', 'bygg-dator-theme')
+]);
