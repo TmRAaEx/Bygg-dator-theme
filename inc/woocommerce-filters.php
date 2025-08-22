@@ -22,3 +22,9 @@ add_action('after_setup_theme', function () {
         return __('Tilverkarens beskrivning', 'textdomain');
     });
 });
+
+// add_action('woocommerce_after_add_to_cart_button', function () {
+//     global $product;
+//     echo '<a href="' . wc_get_cart_url() . '" class="button go-to-cart" style="margin-left: 1rem;">Gå till kundvagnen</a>';
+// });
+
