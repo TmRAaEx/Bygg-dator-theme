@@ -1,0 +1,21 @@
+.product-wrapper {
+  display: flex;
+  flex-direction: column;
+
+  & .product-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    & .product-img {
+      max-width: 600px;
+      width: 20vw;
+    }
+
+    & .product-interact {
+      padding: 0.25rem;
+      display: flex;
+      flex-direction: column;
+      font-size: 1.2rem;
+    }
+  }
+}

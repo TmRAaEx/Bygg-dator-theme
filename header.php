@@ -13,7 +13,7 @@
 
     <header>
         <a href="<?php echo home_url('/'); ?>" class="site-logo">
-            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo-generic.png" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/site-logo.png" alt="">
         </a>
 
         <?php

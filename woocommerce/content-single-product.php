@@ -1,25 +1,42 @@
 <?php
 defined('ABSPATH') || exit;
 
-global $product; // WooCommerce product object
+global $product;
 
-// Produkt titel
-the_title('<h1 class="product-title">', '</h1>');
+$image_url = $product->get_image_id() ? wp_get_attachment_url($product->get_image_id()) : wc_placeholder_img_src();
+?>
+<div class="center-content">
+    <div class="product-wrapper">
+        <h1 class="product-title">
+            <?php the_title(); ?>
+        </h1>
+        <div class="product-content">
+            <img src="<?php echo $image_url ?>" alt="<?php the_title() ?>" class="product-img">
 
-// Produkt image
-echo woocommerce_get_product_thumbnail(); // main image
 
-// Pris
-echo $product->get_price_html();
+            <div class="product-interact">
 
-// Add to cart
-woocommerce_template_single_add_to_cart();
+                <?php
+                the_excerpt();
+                ?>
 
-// Short description
-the_excerpt();
+                <p class="product-category-wrapper">Kategori:
+                    <?php echo wc_get_product_category_list($product->get_id(), ', ', '<span class="product-categories">', '</span>'); ?>
+                </p>
 
-// Tabs (beskrivning, reviews)
-woocommerce_output_product_data_tabs();
+                <p class="product-price"><?php echo $product->get_price(); ?></p>
 
-// Relaterade produkter
-woocommerce_output_related_products();
+                <?php
+                woocommerce_template_single_add_to_cart();
+                ?>
+            </div>
+        </div>
+
+        <?php
+        woocommerce_output_product_data_tabs();
+        ?>
+        <?php
+        woocommerce_output_related_products(); ?>
+
+    </div>
+</div>

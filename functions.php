@@ -26,6 +26,13 @@ function bdt_load_assets()
         filemtime(get_template_directory() . '/assets/css/footer.css')
     );
 
+    wp_enqueue_style(
+        'woocommerce-style',
+        get_template_directory_uri() . '/assets/css/woocommerce.css',
+        [],
+        filemtime(get_template_directory() . '/assets/css/woocommerce.css')
+    );
+
     // JS
     wp_enqueue_script(
         'custom-js',
