@@ -66,3 +66,6 @@ function bdt_setup_images()
 }
 
 add_action('after_setup_theme', 'bdt_setup_images');
+
+
+include_once get_template_directory() . '/inc/woocommerce-filters.php';

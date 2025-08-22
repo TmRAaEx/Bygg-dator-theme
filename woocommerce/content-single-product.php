@@ -24,7 +24,7 @@ $image_url = $product->get_image_id() ? wp_get_attachment_url($product->get_imag
                     <?php echo wc_get_product_category_list($product->get_id(), ', ', '<span class="product-categories">', '</span>'); ?>
                 </p>
 
-                <p class="product-price"><?php echo $product->get_price(); ?></p>
+                <p class="product-price"><?php echo $product->get_price(); ?> kr</p>
 
                 <?php
                 woocommerce_template_single_add_to_cart();

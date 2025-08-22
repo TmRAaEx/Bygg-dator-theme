@@ -2,6 +2,7 @@ header {
   width: 100%;
   height: var(--header-height);
   min-height: var(--header-min-height);
+  background-color: white;
   display: flex;
   align-items: center;
   gap: var(--header-gap);
