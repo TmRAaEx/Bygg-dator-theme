@@ -28,4 +28,4 @@
 
     </header>
 
-    <div class="site-content">
+    <section class="site-content">

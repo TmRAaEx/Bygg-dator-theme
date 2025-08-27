@@ -1,4 +1,4 @@
-</div> <!-- ending of the site-content div -->
+</section> <!-- ending of the site-content section -->
 <footer>
 </footer>
 

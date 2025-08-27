@@ -45,6 +45,7 @@ body {
 
 .site-content {
   padding: 0.5rem 1rem;
+  overflow: hidden;
 }
 
 #hero {
