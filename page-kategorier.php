@@ -6,7 +6,6 @@ get_header(); ?>
     <h1><?php single_cat_title(); ?></h1>
 
     <?php
-    // Hämta alla barnkategorier om det finns
     $terms = get_terms([
         'taxonomy' => 'product_cat',
         'hide_empty' => true,
