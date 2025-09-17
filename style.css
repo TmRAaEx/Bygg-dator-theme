@@ -6,11 +6,17 @@ Description: Theme for Bygg Dator
 */
 
 :root {
+  /* Header size */
   --header-gap: clamp(1rem, 5vw, 10vw);
   --header-menu-gap: clamp(0.5rem, 2vw, 2rem);
   --header-menu-fontsize: clamp(0.9rem, 2vw, 1.1rem);
-  --header-height: 8vh;
+  --header-height: 10svh;
   --header-min-height: 70px;
+
+  /* Colors */
+  --background: #f7f5f5;
+  --light-blue: #57afe4;
+  --dark-blue: #18598b;
 }
 
 html,
@@ -24,7 +30,7 @@ body {
 }
 
 body {
-  background-color: #ececec;
+  background-color: var(--background);
 }
 
 .center-content {
@@ -46,6 +52,8 @@ body {
 .site-content {
   padding: 0.5rem 1rem;
   overflow: hidden;
+  position: relative;
+  top: var(--header-height);
 }
 
 #hero {
@@ -59,7 +67,7 @@ body {
   height: 500px;
   background-color: lightgray;
 
-  /* background: url('hero.jpg') center/cover no-repeat; */
+  background: url("assets/images/banner.png") center/cover no-repeat;
 }
 
 .content {
@@ -75,13 +83,23 @@ body {
   }
 }
 
-.pc_builds-list {
+.grid-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  padding: 0;
+  margin: 0;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
-.pc_build-card {
+.card {
   background: #f8f8f8;
   border: 1px solid #ddd;
   border-radius: 6px;
@@ -92,34 +110,47 @@ body {
   height: 100%;
 }
 
-.pc_build-card a {
+.card a {
   text-decoration: none;
   color: black;
 }
 
-.pc_build-card-title {
+.card-title {
   margin: 0;
   padding-top: 5px;
   padding-bottom: 5px;
-  font-size: 20pt;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.pc_build-card_image {
+.card-image {
   width: 100%;
   aspect-ratio: 16/9;
-  background: #e0e0e0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.pc_build-card_image img {
+.card-image img {
   width: 100%;
   height: 100%;
   object-fit: scale-down;
 }
 
-.pc_build-card_author{
+.card-meta {
   color: rgb(57, 49, 49);
   font-size: 12pt;
+}
+
+.pc_build-card .card-meta {
+  font-style: italic;
+}
+
+.product-card .card-meta {
+  font-weight: bold;
 }
