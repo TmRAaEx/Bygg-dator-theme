@@ -50,10 +50,9 @@ body {
 }
 
 .site-content {
-  padding: 0.5rem 1rem;
+  padding: 1rem;
+  padding-top: var(--header-height);
   overflow: hidden;
-  position: relative;
-  top: var(--header-height);
 }
 
 #hero {
