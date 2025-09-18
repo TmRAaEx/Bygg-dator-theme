@@ -16,7 +16,7 @@ Description: Theme for Bygg Dator
   /* Colors */
   --background: #f7f5f5;
   --light-blue: #57afe4;
-  --dark-blue: #18598b;
+  --dark-blue: #155485;
 }
 
 html,
@@ -54,19 +54,20 @@ body {
   padding-top: var(--header-height);
   overflow: hidden;
 }
-
 #hero {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  margin-top: -0.5rem;
-  height: 500px;
-  background-color: lightgray;
+  width: 100vw;       
+  margin-left: calc(-50vw + 50%);
+  height: 500px; 
+  overflow: hidden;  
+  background-color: var(--dark-blue);
+}
 
-  background: url("assets/images/banner.png") center/cover no-repeat;
+#hero img {
+  width: 100%;
+  height: auto;      
+  display: block;
+  object-fit: scale-down;
+
 }
 
 .content {

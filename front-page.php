@@ -2,8 +2,9 @@
 
 
 
-
-<div id="hero" class="center-content"></div>
+<div id="hero" class="center-content">
+  <img src="<?php echo get_template_directory_uri(); ?>/assets/images/banner.png" alt="Banner">
+</div>
 
 <div class="center-content">
     <div class="content">
